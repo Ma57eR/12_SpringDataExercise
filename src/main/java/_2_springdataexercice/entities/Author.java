@@ -20,7 +20,7 @@ public class Author {
     @OneToMany(targetEntity = Book.class, mappedBy = "author")
     private Set<Book> books;
 
-    public Author(String firstName, String lastName, Set<Book> books) {
+    public Author(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.books = new HashSet<>();

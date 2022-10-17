@@ -11,7 +11,7 @@ public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long authorId;
+    private Long id;
 
     @Column(name = "title", nullable = false, length = 50)
     private String title;
@@ -29,7 +29,7 @@ public class Book {
     @Column(columnDefinition = "TEXT", length = 1000)
     private String description;
 
-    @Column(name = "edition_type")
+    @Column(name = "edition_type", nullable = false)
     private EditionType editionType;
 
     @Column(nullable = false)
@@ -40,11 +40,10 @@ public class Book {
     @Column(name = "release_date")
     private LocalDate releaseDate;
 
-    @Column(name = "age_restriction")
+    @Column(name = "age_restriction", nullable = false)
     private AgeRestriction ageRestriction;
 
     @ManyToOne
-    @JoinColumn(name = "id")
     private Author author;
 
     @ManyToMany
@@ -66,12 +65,12 @@ public class Book {
         this.categories = new HashSet<>();
     }
 
-    public Long getAuthorId() {
-        return authorId;
+    public Long getId() {
+        return id;
     }
 
-    public void setAuthorId(Long authorId) {
-        this.authorId = authorId;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
