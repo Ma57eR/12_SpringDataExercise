@@ -65,6 +65,9 @@ public class Book {
         this.categories = new HashSet<>();
     }
 
+    public Book(String book) {
+    }
+
     public Long getId() {
         return id;
     }
